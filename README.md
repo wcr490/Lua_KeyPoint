@@ -22,7 +22,8 @@ ASCII码对照表：http://c.biancheng.net/c/ascii/
 ### 总结：提供较多简便语法
 
 ## 1.3
-*```
+*定义写法
+```
 funtion f(n)
 body……
 end
