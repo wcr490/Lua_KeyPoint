@@ -25,29 +25,40 @@ ASCII码对照表：http://c.biancheng.net/c/ascii/
 *定义写法
 ```
 funtion f(n)
-body……
+body
 end
 ```
-* 函数中没传入的值为nil
-* return可以同时返回多个值 return a,b
-* 支持同时通过函数返回值赋值多个变量 i,j = f(1,2)
+* 函数中没传入的值为` nil `
+* return可以同时返回多个值 ` return a,b `
+* 支持同时通过函数返回值赋值多个变量 ` i,j = f(1,2) `
 ### 总结：风格十分自由，但需要习惯
 
 ## 1.4
-* table类似数组，不同在于不限制存放类型，并且索引从1开始，而非从0开始 a = {1,"abcde",function() end}
-* 索引a[1]形式查找，不存在则为nil，同时支持#a得到数组长度
-* 提供工具实现table插入，但不确定性能损耗 table.insert(table_A,"abcde")
-* 工具类十分强大，table.insert(table_A,2,"abc")可直接在第二项插入abc，此时所有的数据向后移动
-* 支持table.remove(a,2)，此时我们移除了索引为2的元素，其他元素向前补，此外，remove方法存在返回值，为对应索引的值，支持b = talbe.remove(a,2)
+* table类似数组，不同在于不限制存放类型，并且索引从1开始，而非从0开始
+```
+a = {
+1,
+"abcde",
+function()
+body
+end
+}
+```
+* 索引` a[1] `形式查找，不存在则为` nil `，同时支持` #a `得到数组长度
+* 提供工具实现table插入，但不确定性能损耗 ` table.insert(table_A,"abcde") `
+* 工具类十分强大，` table.insert(table_A,2,"abc") `可直接在第二项插入` abc `，此时所有的数据向后移动
+* 支持` table.remove(a,2) `，此时我们移除了索引为2的元素，其他元素向前补，此外，remove方法存在返回值，为对应索引的值，支持` b = talbe.remove(a,2) `
 * 支持索引为字符串，类似字典，或二维数组，也很像json
-<br>a = {
-<br>a = 1 , 
-<br>b = "abc" , 
-<br>c = function()
-<br>end,
-<br>d = 123456
-<br>}
-<br>查找支持简便写法，a.a表示索引为a的值
+```
+a = {
+a = 1 , 
+b = "abc" , 
+c = function()
+end,
+d = 123456
+}
+```
+查找支持简便写法，a.a表示索引为a的值
 * 存在内置_G，类型为table，其中包含所有已定义的全局变量，Lua围绕其运转，_G多维结构构建出类与方法，类似Java中的面对对象，_G["table"]即table类所在，同时，_G["table"]["insert"]即table类的方法table.insert
 ### 总结：Table是Lua最重要的基础，包含大量工具，结合了链表和数组的特点，应从底层多加理解，通过_G我们就了解了Lua的运作原理，是Lua灵魂所在
 
