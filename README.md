@@ -1,7 +1,8 @@
 # Lua基本要点
 参考：
-Lua官网：http://www.lua.org/manual/5.3/
-ASCII码对照表：http://c.biancheng.net/c/ascii/
+[Lua官网](http://www.lua.org/manual/5.3/)
+[ASCII码对照表](http://c.biancheng.net/c/ascii/)
+
 
 ## 1.1
 * 直接赋值使用，全局变量，关键字` local `可以声明局部变量
